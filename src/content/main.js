@@ -52,6 +52,7 @@ var ToolboxPlus = {
         let labelAlignMenuItem = document.getElementById("toolbarmode-labelalign");
         let useTextBesideIcons = (labelAlign == "end");
         labelAlignMenuItem.setAttribute("checked", useTextBesideIcons);
+        labelAlignMenuItem.disabled = (toolbarMode != "full");
     },
 
     setToolbarMode: function (aEvent, aToolbarId = null, aToolbarMode = null) {

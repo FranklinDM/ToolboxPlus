@@ -1,0 +1,36 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Override the binding for themes that enforce vertical-style menu buttons */
+toolbar[mode="full"][labelalign="end"] .toolbarbutton-1[type="menu"]:not(:-moz-any(#back-button, #forward-button, #feed-button)) {
+  -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#menu");
+}
+
+/* Override themes that remove the inline margin from toolbar buttons */
+.toolbar-primary[mode="full"][labelalign="end"] .toolbarbutton-1 > .toolbarbutton-icon,
+.toolbar-primary[mode="full"][labelalign="end"] .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+toolbar[mode="full"][labelalign="end"] .toolbarbutton-1 > .toolbarbutton-icon,
+toolbar[mode="full"][labelalign="end"] .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
+  margin-inline-end: 5px;
+}
+
+/* Label alignment */
+.toolbar-primary[mode="full"][labelalign="end"] .toolbarbutton-1,
+.toolbar-primary[mode="full"][labelalign="end"] .toolbarbutton-1[type="menu-button"] > .toolbarbutton-menubutton-button,
+toolbar[mode="full"][labelalign="end"] .toolbarbutton-1,
+toolbar[mode="full"][labelalign="end"] .toolbarbutton-1[type="menu-button"] > .toolbarbutton-menubutton-button {
+  -moz-box-orient: horizontal;
+}
+
+.toolbar-primary[mode="full"][labelalign="bottom"] .toolbarbutton-1,
+.toolbar-primary[mode="full"][labelalign="bottom"] .toolbarbutton-1[type="menu-button"] > .toolbarbutton-menubutton-button,
+toolbar[mode="full"][labelalign="bottom"] .toolbarbutton-1,
+toolbar[mode="full"][labelalign="bottom"] .toolbarbutton-1[type="menu-button"] > .toolbarbutton-menubutton-button {
+  -moz-box-orient: vertical;
+}
+
+/* Flexible toolbar buttons */
+toolbar[flexible="true"] .toolbarbutton-1 {
+  -moz-box-flex: 1;
+}

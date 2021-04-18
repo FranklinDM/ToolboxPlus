@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<?xml-stylesheet href="chrome://toolboxplus/skin/overlay.css" type="text/css"?>
+
+<!DOCTYPE overlay [
+    <!ENTITY % customizeToolbarDTD SYSTEM "chrome://global/locale/customizeToolbar.dtd">
+    %customizeToolbarDTD;
+    <!ENTITY % toolboxPlusDTD SYSTEM "chrome://toolboxplus/locale/main.dtd">
+    %toolboxPlusDTD;
+]>
+
+<overlay id="toolboxplus-browser-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/javascript"
+            src="chrome://toolboxplus/content/main.js" />
+    <popupset id="mainPopupSet">
+        <menupopup id="toolbar-context-menu">
+            <menu id="toolbar-settings"
+                  label="&toolbarSettingsMenu.label;"
+                  accesskey="&toolbarSettingsMenu.accesskey;"
+                  position="2">
+                <menupopup id="toolbar-settings-menu"
+                           onpopupshowing="ToolboxPlus.updateMenu(event);"
+                           onpopuphidden="ToolboxPlus.currentToolbar = null;">
+                    <menuitem id="toolbarmode-full"
+                              label="&iconsAndText.label;"
+                              accesskey="&iconsAndText.accesskey;"
+                              type="radio"
+                              name="mode"
+                              value="full"
+                              oncommand="ToolboxPlus.setToolbarMode(event);" />
+                    <menuitem id="toolbarmode-icons"
+                              label="&icons.label;"
+                              accesskey="&icons.accesskey;"
+                              type="radio"
+                              name="mode"
+                              value="icons"
+                              oncommand="ToolboxPlus.setToolbarMode(event);" />
+                    <menuitem id="toolbarmode-text"
+                              label="&text.label;"
+                              accesskey="&text.accesskey;"
+                              type="radio"
+                              name="mode"
+                              value="text"
+                              oncommand="ToolboxPlus.setToolbarMode(event);" />
+                    <menuseparator />
+                    <menuitem id="toolbarmode-flexible"
+                              label="&useFlexibleButtons.label;"
+                              accesskey="&useFlexibleButtons.accesskey;"
+                              type="checkbox"
+                              oncommand="ToolboxPlus.setFlexState(event);" />
+                    <menuitem id="toolbarmode-smallicons"
+                              label="&useSmallIcons.label;"
+                              accesskey="&useSmallIcons.accesskey;"
+                              type="checkbox"
+                              oncommand="ToolboxPlus.setIconMode(event);" />
+                    <menuitem id="toolbarmode-labelalign"
+                              label="&textBesideIcons.label;"
+                              accesskey="&textBesideIcons.accesskey;"
+                              type="checkbox"
+                              oncommand="ToolboxPlus.setLabelAlign(event);" />
+                    <menuseparator />
+                    <menuitem id="toolbarmode-default"
+                              label="&resetDefaultSettings.label;"
+                              accesskey="&resetDefaultSettings.accesskey;"
+                              oncommand="ToolboxPlus.resetToolbar(event);" />
+                </menupopup>
+            </menu>
+            <menuseparator id="toolbar-settings-separator"
+                           position="3" />
+        </menupopup>
+    </popupset>
+</overlay>

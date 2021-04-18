@@ -1,0 +1,21 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY toolbarSettingsMenu.label "Toolbar settings">
+<!ENTITY toolbarSettingsMenu.accesskey "E">
+
+<!-- Toolbar settings menu items -->
+<!ENTITY useFlexibleButtons.label "Use Flexible Buttons">
+<!ENTITY useFlexibleButtons.accesskey "F">
+<!ENTITY textBesideIcons.label "Show text beside icons">
+<!ENTITY textBesideIcons.accesskey "B">
+<!ENTITY resetDefaultSettings.label "Reset to default settings">
+<!ENTITY resetDefaultSettings.accesskey "U">
+
+<!-- LOCALIZATION NOTE: these access keys must be consistent with the
+     strings that are included in customizeToolbar.dtd -->
+<!ENTITY iconsAndText.accesskey "A">
+<!ENTITY icons.accesskey "O">
+<!ENTITY text.accesskey "T">
+<!ENTITY useSmallIcons.accesskey "S">

@@ -18,12 +18,10 @@
     <script type="application/javascript"
             src="chrome://toolboxplus/content/main.js" />
     <menupopup id="toolbar-context-menu">
-        <menuseparator id="toolbar-settings-separator"
-                       insertbefore="customizeMailToolbarMenuSeparator" />
         <menu id="toolbar-settings"
               label="&toolbarSettingsMenu.label;"
               accesskey="&toolbarSettingsMenu.accesskey;"
-              insertbefore="customizeMailToolbarMenuSeparator">
+              position="2">
             <menupopup id="toolbar-settings-menu"
                        onpopupshowing="ToolboxPlus.updateMenu(event); event.stopPropagation();"
                        onpopuphidden="ToolboxPlus.currentToolbar = null;">
@@ -71,5 +69,7 @@
                           oncommand="ToolboxPlus.resetToolbar(event);" />
             </menupopup>
         </menu>
+        <menuseparator id="toolbar-settings-separator"
+                       position="3" />
     </menupopup>
 </overlay>

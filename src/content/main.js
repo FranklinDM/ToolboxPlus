@@ -47,6 +47,11 @@ var ToolboxPlus = {
         let flexibleMenuItem = document.getElementById("toolbarmode-flexible");
         let useFlexibleButtons = (toolbarFlexible == "true");
         flexibleMenuItem.setAttribute("checked", useFlexibleButtons);
+
+        let toolbarFullscreen = targetToolbar.getAttribute("fullscreentoolbar");
+        let fullscreenMenuItem = document.getElementById("toolbarmode-fullscreen");
+        let showInFullscreen = (toolbarFullscreen == "true");
+        fullscreenMenuItem.setAttribute("checked", showInFullscreen);
         
         let labelAlign = targetToolbar.getAttribute("labelalign");
         let labelAlignMenuItem = document.getElementById("toolbarmode-labelalign");
@@ -162,6 +167,30 @@ var ToolboxPlus = {
         return true;
     },
     
+    setFullscreen: function (aEvent, aToolbarId = null, aFullscreen = null) {
+        let targetToolbar = aToolbarId ?
+                            document.getElementById(aToolbarId) :
+                            null;
+        let fullscreen = aFullscreen;
+
+        if (aEvent && aEvent.target) {
+            targetToolbar = this.currentToolbar;
+            if (!aFullscreen) {
+                fullscreen = (aEvent.target.getAttribute("checked") == "true") ?
+                           true :
+                           false;
+            }
+        }
+        
+        if (targetToolbar == null || fullscreen == null) {
+            return false;
+        }
+
+        targetToolbar.setAttribute("fullscreentoolbar", fullscreen);
+        document.persist(targetToolbar.id, "fullscreentoolbar");
+        return true;
+    },
+    
     resetToolbar: function (aEvent, aToolbarId = null) {
         let targetToolbar = aToolbarId ?
                             document.getElementById(aToolbarId) :
@@ -171,8 +200,8 @@ var ToolboxPlus = {
             targetToolbar = this.currentToolbar;
         }
         
-        let attributes = ["mode", "iconsize", "labelalign", "flexible"];
-        let defaultAttributes = ["icons", "large", "bottom", "false"];
+        let attributes = ["mode", "iconsize", "labelalign", "flexible", "fullscreentoolbar"];
+        let defaultAttributes = ["icons", "large", "bottom", "false", "false"];
         
         for (let i = 0; i < attributes.length; i++) {
             let defaultValue = defaultAttributes[i];
@@ -185,6 +214,13 @@ var ToolboxPlus = {
             
             if (toolbarDefaultValue) {
                 defaultValue = toolbarDefaultValue;
+            }
+            
+            // Special case: Navigation Toolbar and Tabs Toolbar
+            if (attributes[i] == "fullscreentoolbar" &&
+                (targetToolbar.id == "nav-bar" ||
+                 targetToolbar.id == "TabsToolbar")) {
+                defaultValue = "true";
             }
             
             targetToolbar.setAttribute(attributes[i], defaultValue);

@@ -12,6 +12,8 @@
 <!ENTITY textBesideIcons.accesskey "B">
 <!ENTITY resetDefaultSettings.label "Reset to default settings">
 <!ENTITY resetDefaultSettings.accesskey "U">
+<!ENTITY showInFullscreen.label "Show in fullscreen mode">
+<!ENTITY showInFullscreen.accesskey "H">
 
 <!-- LOCALIZATION NOTE: these access keys must be consistent with the
      strings that are included in customizeToolbar.dtd -->

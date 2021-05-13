@@ -12,6 +12,8 @@
 <!ENTITY textBesideIcons.accesskey "B">
 <!ENTITY resetDefaultSettings.label "Ibalik sa Dati">
 <!ENTITY resetDefaultSettings.accesskey "D">
+<!ENTITY showInFullscreen.label "Ipakita kapag sakop ang buong screen">
+<!ENTITY showInFullscreen.accesskey "S">
 
 <!-- LOCALIZATION NOTE: these access keys must be consistent with the
      strings that are included in customizeToolbar.dtd -->

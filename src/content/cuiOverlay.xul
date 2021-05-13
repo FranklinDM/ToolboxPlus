@@ -63,6 +63,11 @@
                               accesskey="&textBesideIcons.accesskey;"
                               type="checkbox"
                               oncommand="ToolboxPlus.setLabelAlign(event);" />
+                    <menuitem id="toolbarmode-fullscreen"
+                              label="&showInFullscreen.label;"
+                              accesskey="&showInFullscreen.accesskey;"
+                              type="checkbox"
+                              oncommand="ToolboxPlus.setFullscreen(event);" />
                     <menuseparator />
                     <menuitem id="toolbarmode-default"
                               label="&resetDefaultSettings.label;"

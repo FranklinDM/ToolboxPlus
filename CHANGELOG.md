@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.1.1
+* Update install manifest
+
 ### 1.1.0
 * Add support for Basilisk
 * Add feature to toggle toolbar visibility in fullscreen mode

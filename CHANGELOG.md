@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.1.2
+* Prevent available toolbars from being appended to the toolbar settings menu (Mail/News)
+
 ### 1.1.1
 * Update install manifest
 

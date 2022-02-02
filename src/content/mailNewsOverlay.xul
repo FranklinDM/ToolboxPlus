@@ -23,7 +23,7 @@
               accesskey="&toolbarSettingsMenu.accesskey;"
               position="2">
             <menupopup id="toolbar-settings-menu"
-                       onpopupshowing="ToolboxPlus.updateMenu(event); event.stopPropagation();"
+                       onpopupshowing="event.stopPropagation(); ToolboxPlus.updateMenu(event);"
                        onpopuphidden="ToolboxPlus.currentToolbar = null;">
                 <menuitem id="toolbarmode-full"
                           label="&iconsAndText.label;"

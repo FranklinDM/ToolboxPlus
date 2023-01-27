@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.1.3
+* Add support for Epyrus
+* Mark as compatible with Pale Moon 32
+
 ### 1.1.2
 * Prevent available toolbars from being appended to the toolbar settings menu (Mail/News)
 

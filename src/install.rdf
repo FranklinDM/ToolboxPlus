@@ -3,7 +3,7 @@
     <Description about="urn:mozilla:install-manifest">
         <!-- General -->
         <em:id>toolboxplus@franklindm</em:id>
-        <em:version>dev-build</em:version>
+        <em:version>1.1.4</em:version>
         <em:type>2</em:type>
         <em:homepageURL>https://franklindm.github.io/</em:homepageURL>
 
